@@ -21,5 +21,14 @@ After the step above, the toolchains-cmake is already your sub-project on your l
 
     git push origin master
 
-Help
+## Syncing updates from the sub-project ##
+To get the latest version from the sub-project, you can pull it from your project
 
+    git subtree pull --squash --prefix=thirdparty/toolchains-cmake thirdparty-toolchains-cmake master
+
+## Making changes and bringing back to toolchains-cmake ##
+You can modify the source and contribute the toolchains-cmake repository by bringing back your changes to the original repository.
+With git-subtree, you can do this from your project.
+
+    git subtree push --prefix=thirdparty/toolchains-cmake thirdparty-toolchains-cmake feature-branch
+The last argument is the branch to which you commit.
