@@ -6,4 +6,17 @@ A typical cmake project which needs a cross-compiling would pass a toolchain fil
 
     cmake -G "Unix Makefiles" -DCMAKE_TOOLCHAIN_FILE=<cmake-toolchain-file> <src-dir>
     
+## Adding toolchains-cmake as a sub-project ##
+You can import/add this project as a sub-project of yours using the famous git subtree.
 
+The first thing is to track toolchains-cmake in your project to save some typing later on.
+
+    git remote add thirdparty-toolchains-cmake https://github.com/antonindrawan/toolchains-cmake.git
+   
+Secondly, add a subtree
+
+    git subtree add --squash --prefix=thirdparty/toolchains-cmake thirdparty-toolchains-cmake master
+
+After the step above, the toolchains-cmake is already your sub-project on your local repository. Now, you want to update the remote repository as well.
+
+    git push origin master
