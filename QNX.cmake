@@ -8,10 +8,15 @@ CMAKE_FORCE_CXX_COMPILER("$ENV{QNX_HOST}/usr/bin/QCC" QCC)
 # Setting QNX compiler flags
 set(QNX_FLAGS "-Vgcc_ntoarmv7le")
 set(QNX_FLAGS "${QNX_FLAGS} -lang-c++")
+set(QNX_FLAGS "${QNX_FLAGS} -Werror")
 set(QNX_FLAGS "${QNX_FLAGS} -Wc,-fPIC")
 set(QNX_FLAGS "${QNX_FLAGS} -Wc,-finline-functions")
-set(QNX_FLAGS "${QNX_FLAGS} -O2")
 set(QNX_FLAGS "${QNX_FLAGS} -lm")
+if(CMAKE_BUILD_TYPE STREQUAL "Debug")
+  set(QNX_FLAGS "${QNX_FLAGS} -O0 -g")
+elseif(CMAKE_BUILD_TYPE STREQUAL "Release")
+  set(QNX_FLAGS "${QNX_FLAGS} -O2")
+endif()
 
 # As cmake C/CXX flags are set in this toolchain file (passed to cmake
 # using -DCMAKE_TOOLCHAIN_FILE these cmake variables have to be cached.
