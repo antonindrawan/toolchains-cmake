@@ -20,3 +20,6 @@ Secondly, add a subtree
 After the step above, the toolchains-cmake is already your sub-project on your local repository. Now, you want to update the remote repository as well.
 
     git push origin master
+
+Help
+
