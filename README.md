@@ -32,3 +32,5 @@ With git-subtree, you can do this from your project.
 
     git subtree push --prefix=thirdparty/toolchains-cmake thirdparty-toolchains-cmake feature-branch
 The last argument is the branch to which you commit.
+
+That's all.
