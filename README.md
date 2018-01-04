@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/antonindrawan/toolchains-cmake.svg?branch=master)](https://travis-ci.org/antonindrawan/toolchains-cmake)
+
 Toolchains cmake
 ===============
 This project is meant to collect a list of toolchain files which can be used for cross-compiling a cmake project.
@@ -5,14 +7,14 @@ This project is meant to collect a list of toolchain files which can be used for
 A typical cmake project which needs a cross-compiling would pass a toolchain file.
 
     cmake -G "Unix Makefiles" -DCMAKE_TOOLCHAIN_FILE=<cmake-toolchain-file> <src-dir>
-    
+
 ## Adding toolchains-cmake as a sub-project ##
 You can import/add this project as a sub-project of yours using the famous git subtree.
 
 The first thing is to track toolchains-cmake in your project to save some typing later on.
 
     git remote add thirdparty-toolchains-cmake https://github.com/antonindrawan/toolchains-cmake.git
-   
+
 Secondly, add a subtree
 
     git subtree add --squash --prefix=thirdparty/toolchains-cmake thirdparty-toolchains-cmake master
