@@ -1,0 +1,13 @@
+language: cpp
+compiler:
+  - gcc
+  - clang
+
+os:
+  - linux
+
+dist: trusty
+
+sudo: false
+
+script: ./travis.sh
