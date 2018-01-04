@@ -8,6 +8,9 @@ os:
 
 dist: trusty
 
+install:
+  - sudo apt-get --yes install ninja-build
+
 sudo: false
 
 script: ./travis.sh
