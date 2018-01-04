@@ -5,3 +5,4 @@ cd build
 cmake -G Ninja ..
 ninja -v
 
+./test/Foo
